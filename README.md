@@ -6,6 +6,7 @@
 
 * [Day   1    (2020-07-10)](#0) 
 * [Day   2    (2020-07-11)](#1) 
+* [Day   2    (2020-07-12)](#2) 
 
 <span id="0"></span>
 
@@ -24,3 +25,11 @@
 预计明天从文件的角度整体阅读axvisor代码，然后应该还会开始一些新的学习。
 
 ![axvisor main函数执行流](photo_gallery/main().drawio.png)
+
+<span id="2"></span>
+
+### Day3
+
+今天主要是完整的阅读了一下axvisor的代码总结了其中每文件的功能。然后补充了一些关于过程宏的知识。最后请教了苏助教crate发布到crate.io之前需要做哪些工作，苏助教讲解后为我推荐了repo和pr参考，以及可以尝试axvisor--crates中的axaddspace部分。预计明天会学习部分前几期训练营中的Hypervisor，然后阅读助教推荐的repo和pr。
+
+![axvisor/src](photo_gallery/axvisor_src.drawio.png)
