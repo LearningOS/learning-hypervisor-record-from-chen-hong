@@ -7,6 +7,7 @@
 * [Day   1    (2025-07-10)](#0) 
 * [Day   2    (2025-07-11)](#1) 
 * [Day   3    (2025-07-12)](#2) 
+* [Day   4    (2025-07-12)](#3) 
 
 <span id="0"></span>
 
@@ -33,3 +34,11 @@
 今天主要是完整的阅读了一下axvisor的代码总结了其中每文件的功能。然后补充了一些关于过程宏的知识。最后请教了苏助教crate发布到crate.io之前需要做哪些工作，苏助教讲解后为我推荐了repo和pr参考，以及可以尝试axvisor--crates中的axaddspace部分。预计明天会学习部分前几期训练营中的Hypervisor，然后阅读助教推荐的repo和pr。
 
 ![axvisor/src](photo_gallery/axvisor_src.drawio.png)
+
+<span id="3"></span>
+
+### Day4
+今日进度：
+1.完成了23年秋冬季训练营关于ARMv8的Hypervisor教学视频的学习，主要涉及armv8的寄存器介绍、二阶段地址翻译、及设备虚拟化中断虚拟化等。之后会学习该架构部分对应的实验文档以及完成里面的练习。
+2.阅读了苏助教推荐axmm_crates源码，学习crate中example以及文档的编写，后续会继续分析该仓库提交的关键pr进一步学习如何完善crate，然后着手完善axaddrspace到可以发布carte.io。
+另外明天暂停一天需要回学校答辩。
