@@ -100,8 +100,15 @@
 
 今天主要在参考axcpu和page_table_multiarch实现x86_64架构的flush_tlb函数。但是现在存在问题针对map_line()的测试函数运行在x86架构下时回报错段错误，初步确定时因为调用新实现的flush_tlb导致的。可能是测试里不能直接调用汇编？但是为什么riscv64和aarch可以 >_<
 
-<span id="10"></span>
+<span id="11"></span>
 
-### Day11
+### Day12
 
-已排查清楚map_line()的测试函数运行在x86架构下时回报错段错误，是因为flush_tlb调用ring0导致的，而测试不处于ring0。然后结合x86-64 Hypervisor开始看x86vcpu的设计。
+已排查清楚map_line()的测试函数运行在x86架构下时回报错段错误，是因为flush_tlb调用ring0指令导致的，而测试不处于ring0。然后结合x86-64 Hypervisor开始看x86vcpu的设计。
+
+<span id="12"></span>
+
+### Day13
+
+今天主要看了 Intel VMX的初始化以及VMX开起前的物理cpu配置流程。不同平台的物理cpu初始化不一样，所以在适配新的平台时应当从初始化配置切入？在axvisor上适配新的平台至少需要对哪些方面作出调整，物理cpu的配置及初始化+vcpu设计+地址空间设计？
+![使能x86架构下开启虚拟化时物理cpu](photo_gallery/x86_cpu_vmx.png)
