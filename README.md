@@ -15,7 +15,9 @@
 * [Day   9    (2025-07-20)](#8)
 * [Day   10    (2025-07-21)](#9)
 * [Day   11    (2025-07-22)](#10)
-* [Day   12    (2025-07-23)](#11)   
+* [Day   12    (2025-07-23)](#11)
+* [Day   13    (2025-07-24)](#12)
+* [Day   14    (2025-07-25)](#13)    
 
 <span id="0"></span>
 
@@ -104,11 +106,18 @@
 
 ### Day12
 
-已排查清楚map_line()的测试函数运行在x86架构下时回报错段错误，是因为flush_tlb调用ring0指令导致的，而测试不处于ring0。然后结合x86-64 Hypervisor开始看x86vcpu的设计。
+已排查清楚map_line()的测试函数运行在x86架构下时回报错段错误，是因为flush_tlb调用ring0级别指令导致的，而测试不处于ring0，实际上最终问题在于x86_的flush_tlb实现。然后结合x86-64 Hypervisor开始看x86vcpu的设计。
 
 <span id="12"></span>
 
 ### Day13
 
 今天主要看了 Intel VMX的初始化以及VMX开起前的物理cpu配置流程。不同平台的物理cpu初始化不一样，所以在适配新的平台时应当从初始化配置切入？在axvisor上适配新的平台至少需要对哪些方面作出调整，物理cpu的配置及初始化+vcpu设计+地址空间设计？
+
 ![使能x86架构下开启虚拟化时物理cpu](photo_gallery/x86_cpu_vmx.png)
+
+<span id="13"></span>
+
+### Day14
+
+今天主要对address_space/mod 测例适配姚礼兴最终版本AxMmHal和PagingHandler的通用接口，另外针对苏助教之前的review作出修改。
