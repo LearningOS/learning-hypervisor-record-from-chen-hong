@@ -19,6 +19,7 @@
 * [Day   13    (2025-07-24)](#12)
 * [Day   14    (2025-07-25)](#13) 
 * [Day   15    (2025-07-26)](#14)   
+* [Day   16    (2025-07-27)](#15)  
 
 <span id="0"></span>
 
@@ -128,3 +129,9 @@
 ### Day15
 
 今日主要是做address_space pr的相关收尾工作较为琐碎，然后准备规划一下axvisor for loongarch的开发计划，另外收到新任务跑通最新的arceos for loongarch。
+
+<span id="15"></span>
+
+### Day16
+
+今天正式合并[address_space pr](https://github.com/arceos-hypervisor/axaddrspace/pull/16),然后跑了一下最新的arceos for loongarch64，基本无误。最后就是今天拿到了龙芯架构的虚拟化相关手册开始学习。
