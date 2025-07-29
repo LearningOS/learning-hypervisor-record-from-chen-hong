@@ -19,7 +19,8 @@
 * [Day   13    (2025-07-24)](#12)
 * [Day   14    (2025-07-25)](#13) 
 * [Day   15    (2025-07-26)](#14)   
-* [Day   16    (2025-07-27)](#15)  
+* [Day   16    (2025-07-27)](#15)
+* [Day   17    (2025-07-29)](#16)
 
 <span id="0"></span>
 
@@ -135,3 +136,14 @@
 ### Day16
 
 今天正式合并[address_space pr](https://github.com/arceos-hypervisor/axaddrspace/pull/16),然后跑了一下最新的arceos for loongarch64，基本无误。最后就是今天拿到了龙芯架构的虚拟化相关手册开始学习。
+
+<span id="16"></span>
+
+### Day17
+
+今日结合loongarch手册尝试阅读arceos for loongarch代码，但是loongarch方面好像没有什么参考文档ovo需要时间捋一捋。这几天先尽快把arceos for loongarch的整体框架理清楚然后理解相关代码。
+
+对于axvisor for loongarch的开发初步分为三个大的部分:
++ 理解arceos到axvisor启动并打印logo的流程，并为loongarch做出必要适配。（理论上来说在qemu上是否可以跑到axvisor打印logo的部分？这一部分的前置任务是理解arceos for loongarch）
++ 编写loongarch硬件虚拟化使能部分，这一部分应该可以参考hvisor。
++ 编写loonarch vcpu以及对axaddress_space for loongarch做出适配。（完成以上散步能否跑起一个最小guest os ？或者说还要添加虚拟IO、设备等，待验证）
