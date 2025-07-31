@@ -21,7 +21,7 @@
 * [Day   15    (2025-07-26)](#14)   
 * [Day   16    (2025-07-27)](#15)
 * [Day   17    (2025-07-29)](#16)
-
+* [Day   18    (2025-07-31)](#17)
 <span id="0"></span>
 
 ### Day 1
@@ -147,3 +147,9 @@
 + 理解arceos到axvisor启动并打印logo的流程，并为loongarch做出必要适配。（理论上来说在qemu上是否可以跑到axvisor打印logo的部分？这一部分的前置任务是理解arceos for loongarch）
 + 编写loongarch硬件虚拟化使能部分，这一部分应该可以参考hvisor。
 + 编写loonarch vcpu以及对axaddress_space for loongarch做出适配。（完成以上散步能否跑起一个最小guest os ？或者说还要添加虚拟IO、设备等，待验证）
+
+<span id="17"></span>
+
+### Day18
+
+今日主要是对arceos是如和与axvisor链接到一起的有点疑问，如果想跑起来axvisor for LA英爱需要先修改axvisor的make流程调整参数。但是如果需要更换基座arceos需要如何操作目前只看到.toml文件的配置。
