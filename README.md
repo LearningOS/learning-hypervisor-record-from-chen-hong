@@ -22,6 +22,7 @@
 * [Day   16    (2025-07-27)](#15)
 * [Day   17    (2025-07-29)](#16)
 * [Day   18    (2025-07-31)](#17)
+* [Day   19    (2025-08-1)](#18)
 <span id="0"></span>
 
 ### Day 1
@@ -153,3 +154,9 @@
 ### Day18
 
 今日主要是对arceos是如和与axvisor链接到一起的有点疑问，如果想跑起来axvisor for LA英爱需要先修改axvisor的make流程调整参数。但是如果需要更换基座arceos需要如何操作目前只看到.toml文件的配置。
+
+<span id="17"></span>
+
+### Day18
+
+今日主要开始学习axplate_crates、axcpu两个仓库代码，主要思路还是从_start启动到axruntime中main函数执行。其中底层的启动与架构相关需要结合loongarch手册一起查看，但是loongarch的一些伪指令信息不太找得到。
