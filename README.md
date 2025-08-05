@@ -23,6 +23,7 @@
 * [Day   17    (2025-07-29)](#16)
 * [Day   18    (2025-07-31)](#17)
 * [Day   19    (2025-08-1)](#18)
+* [Day   20  (2025-08-5)](#19)
 <span id="0"></span>
 
 ### Day 1
@@ -155,8 +156,23 @@
 
 今日主要是对arceos是如和与axvisor链接到一起的有点疑问，如果想跑起来axvisor for LA英爱需要先修改axvisor的make流程调整参数。但是如果需要更换基座arceos需要如何操作目前只看到.toml文件的配置。
 
-<span id="17"></span>
+<span id="18"></span>
 
-### Day18
+### Day19
 
 今日主要开始学习axplate_crates、axcpu两个仓库代码，主要思路还是从_start启动到axruntime中main函数执行。其中底层的启动与架构相关需要结合loongarch手册一起查看，但是loongarch的一些伪指令信息不太找得到。
+
+<span id="19"></span>
+
+### Day20
+
+今日初步熟悉hvisor for loongarch的源码并与谢助教和姚同学就axvisor for LA做了进一步讨论。
++ CPU检测CPUCFG.2.LVZ[bit10]，确认硬件是否支持虚拟化
++ host模式初始化，配置配置 GTLBC 等寄存器
++ 虚拟机管理模块设计
++ 虚拟机保存的上下文设计
++ 虚拟机加载以及退出
++ cpu虚拟化的部分，补充loongarch vcpu
++ 内存虚拟化，这个都可以参考其他架构的实现，包括两级地址翻译，我看过了，都是两级地址翻译，还有tlb同步，这部部分内容也在axcpu中有提供接口
++ 中断虚拟化（不太熟悉放在后面做）
++ 虚拟io（不太熟悉放在后面做）
