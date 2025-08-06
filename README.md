@@ -24,6 +24,7 @@
 * [Day   18    (2025-07-31)](#17)
 * [Day   19    (2025-08-1)](#18)
 * [Day   20  (2025-08-5)](#19)
+* [Day   21  (2025-08-6)](#20)
 <span id="0"></span>
 
 ### Day 1
@@ -176,3 +177,11 @@
 + 内存虚拟化，这个都可以参考其他架构的实现，包括两级地址翻译，我看过了，都是两级地址翻译，还有tlb同步，这部部分内容也在axcpu中有提供接口
 + 中断虚拟化（不太熟悉放在后面做）
 + 虚拟io（不太熟悉放在后面做）
+ 
+<span id="20"></span>
+
+### Day21
+
+[arceos for loongarch_start.md](https://github.com/aluojibuzhu/crate-blog/blob/main/arceos%20for%20loongarch_start.md) axvisor arceos启动执行流陆续更新中
+
+[oscomp_arceos_h.md](https://github.com/aluojibuzhu/crate-blog/blob/main/oscomp_arceos_h.md) h系列实验总结陆续更新中
