@@ -25,6 +25,7 @@
 * [Day   19    (2025-08-1)](#18)
 * [Day   20  (2025-08-5)](#19)
 * [Day   21  (2025-08-6)](#20)
+* [Day   22  (2025-08-7)](#21)
 <span id="0"></span>
 
 ### Day 1
@@ -185,3 +186,24 @@
 [arceos for loongarch_start.md](https://github.com/aluojibuzhu/crate-blog/blob/main/arceos%20for%20loongarch_start.md) axvisor arceos启动执行流陆续更新中
 
 [oscomp_arceos_h.md](https://github.com/aluojibuzhu/crate-blog/blob/main/oscomp_arceos_h.md) h系列实验总结陆续更新中
+
+<span id="21"></span>
+
+### Day22
+
+[hvisor for loongarch](https://github.com/aluojibuzhu/crate-blog/blob/main/hvisor.md)
+今日主要熟悉hvisor虚拟化工作，另外谢助教初步编写入口处虚拟化使能及二阶段地址翻译代码，对此共同分析讨论中。
+
+**hvisor start 总体流程**：
+
+- 建立虚拟地址空间（DMW0/DMW1）
+
+- 切换到虚拟地址执行（JUMP_VIRT_ADDR）
+
+- 配置 CPU 运行状态（CRMD/PRMD/EUEN）
+
+- 设置多核独立栈（per-CPU stack）
+
+- 确保内存一致性（内存屏障）
+
+- 进入 Rust 代码（[rust_main]main.rs )）
