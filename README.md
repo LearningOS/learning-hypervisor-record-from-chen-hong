@@ -26,6 +26,7 @@
 * [Day   20  (2025-08-5)](#19)
 * [Day   21  (2025-08-6)](#20)
 * [Day   22  (2025-08-7)](#21)
+* [Day   23  (2025-08-8)](#22)
 <span id="0"></span>
 
 ### Day 1
@@ -207,3 +208,57 @@
 - 确保内存一致性（内存屏障）
 
 - 进入 Rust 代码（[rust_main]main.rs )）
+
+<span id="22"></span>
+
+### Day23
+h系列实验
+- **_run_guest**：ctx作为run_guest的第一个函数，ctx的地址被传入a0寄存器
+
+  - 保存h模式通用寄存器
+
+    ```asm
+        /* Save hypervisor state */
+    
+        /* Save hypervisor GPRs (except T0-T6 and a0, which is GuestInfo and stashed in sscratch) */
+        sd   ra, ({hyp_ra})(a0)
+        sd   gp, ({hyp_gp})(a0)
+        sd   tp, ({hyp_tp})(a0)
+        sd   s0, ({hyp_s0})(a0)
+        sd   s1, ({hyp_s1})(a0)
+        sd   a1, ({hyp_a1})(a0)
+        sd   a2, ({hyp_a2})(a0)
+        sd   a3, ({hyp_a3})(a0)
+        sd   a4, ({hyp_a4})(a0)
+        sd   a5, ({hyp_a5})(a0)
+        sd   a6, ({hyp_a6})(a0)
+        sd   a7, ({hyp_a7})(a0)
+        sd   s2, ({hyp_s2})(a0)
+        sd   s3, ({hyp_s3})(a0)
+        sd   s4, ({hyp_s4})(a0)
+        sd   s5, ({hyp_s5})(a0)
+        sd   s6, ({hyp_s6})(a0)
+        sd   s7, ({hyp_s7})(a0)
+        sd   s8, ({hyp_s8})(a0)
+        sd   s9, ({hyp_s9})(a0)
+        sd   s10, ({hyp_s10})(a0)
+        sd   s11, ({hyp_s11})(a0)
+        sd   sp, ({hyp_sp})(a0)
+    ```
+
+  - 保存hyp_sstatus加载guest_sstatus（上文准备的ctx），同时写入guest_hstatus之后调用指令sret时就返回vs
+
+    ```rust
+        ld    t1, ({guest_hstatus})(a0)
+        csrrw t1, hstatus, t1
+    ```
+
+  - 加载客户机对应的scounteren，**`scounteren`寄存器**（Supervisor Counter Enable Register）是一个与性能计数器访问权限相关的寄存器，主要用于控制用户模式（U-mode）对硬件性能计数器的访问权限。
+
+  - 设置sepc，加载Guest入口
+  - stvec切换到Guest模式下异常向量基址
+  - 保存宿主机状态加载虚拟机GuestInfo
+  - 客户机通用寄存器加载
+  - sret返回到guest模式入口为sepc的值
+
+- **_guest_exit**：基本相同就不多赘述，需注意ret返回时通过ra寄存器。
