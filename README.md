@@ -27,6 +27,7 @@
 * [Day   21  (2025-08-6)](#20)
 * [Day   22  (2025-08-7)](#21)
 * [Day   23  (2025-08-8)](#22)
+* [Day   24  (2025-08-10)](#23)
 <span id="0"></span>
 
 ### Day 1
@@ -262,3 +263,12 @@ h系列实验
   - sret返回到guest模式入口为sepc的值
 
 - **_guest_exit**：基本相同就不多赘述，需注意ret返回时通过ra寄存器。
+
+<span id="23"></span>
+
+### Day24
+
+有点累下次再说一下这些是啥
+[拆分表格](https://github.com/aluojibuzhu/crate-blog/blob/main/%E6%8B%86%E5%88%86%E8%A1%A8%E6%A0%BC.md)
+![percpu](photo_gallery/percpu.png)
+![axvm](photo_gallery/axvm.png)
