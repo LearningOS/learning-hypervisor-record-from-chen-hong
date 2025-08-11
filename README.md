@@ -28,6 +28,7 @@
 * [Day   22  (2025-08-7)](#21)
 * [Day   23  (2025-08-8)](#22)
 * [Day   24  (2025-08-10)](#23)
+* [Day   25  (2025-08-11)](#24)
 <span id="0"></span>
 
 ### Day 1
@@ -272,3 +273,10 @@ h系列实验
 [拆分表格](https://github.com/aluojibuzhu/crate-blog/blob/main/%E6%8B%86%E5%88%86%E8%A1%A8%E6%A0%BC.md)
 ![percpu](photo_gallery/percpu.png)
 ![axvm](photo_gallery/axvm.png)
+
+<span id="23"></span>
+
+### Day24
+
+明天拉完小会再再解释以下
+[vcpu仓库总结](https://github.com/LearningOS/learning-hypervisor-record-from-chen-hong/blob/main/photo_gallery/vcpu%E4%BB%93%E5%BA%93%E6%80%BB%E7%BB%93.png)
