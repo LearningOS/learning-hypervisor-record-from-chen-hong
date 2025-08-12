@@ -29,6 +29,7 @@
 * [Day   23  (2025-08-8)](#22)
 * [Day   24  (2025-08-10)](#23)
 * [Day   25  (2025-08-11)](#24)
+* [Day   25  (2025-08-12)](#25)
 <span id="0"></span>
 
 ### Day 1
@@ -274,9 +275,22 @@ h系列实验
 ![percpu](photo_gallery/percpu.png)
 ![axvm](photo_gallery/axvm.png)
 
-<span id="23"></span>
+<span id="24"></span>
 
-### Day24
+### Day25
 
 明天拉完小会再再解释以下
 [vcpu仓库总结](https://github.com/LearningOS/learning-hypervisor-record-from-chen-hong/blob/main/photo_gallery/vcpu%E4%BB%93%E5%BA%93%E6%80%BB%E7%BB%93.png)
+
+<span id="25"></span>
+
+### Day26
+
+axvisor for LA主要的任务是实现axvm/src/vcpu中的预留的接口。这些接口是实现在对应的vcpu仓库，其中主要编写的文件为percpu、vcpu两个文件，来个文件分别对应pecpu、vcpu的数据结构设计实现，以及这两个数据结构都有需要对应实现的trait。
+所以目前得计划是：
++ 设计实现precou、vcpu数据结构
++ 为percpu、vcpu实现必要的trait
++ 为percpu、vcpu编写加载和退出处理函数
++ 为percpu、vcpu编写特殊架构下的必要方法
++ 以及编写二阶段地址翻译部分
+  
