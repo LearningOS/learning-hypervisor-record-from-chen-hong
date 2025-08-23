@@ -36,6 +36,9 @@
 * [Day   28  (2025-08-12)](#27)
 * [Day   29  (2025-08-13)](#28)
 * [Day   30  (2025-08-14)](#29)
+* [Day   31  (2025-08-19)](#30)
+* [Day   32  (2025-08-21)](#31)
+* [Day   33  (2025-08-23)](#32)
 <span id="0"></span>
 
 ### Day 1
@@ -321,3 +324,21 @@ axvisor for LA主要的任务是实现axvm/src/vcpu中的预留的接口。这�
 ### Day30
 
 开始写run_guest的demo
+
+<span id="30"></span>
+
+### Day31
+
+根据hvisor移植_run_guest、_guest_exit函数以及模式切换时需要使用的上下文，这里的上下文还不完善需要更具vcpu的设计再进行修改适配。axvisor中启用了页表映射，所以需要修改_run_guest、_guest_exit（hvisor中没有实现页表映射）
+
+<span id="31"></span>
+
+### Day32
+
+进一步完善vcpu加载退出需要操作寄存器，当前仓库并未编写loogarch架构下寄存器开始学习编写这一方面。
+
+<span id="32"></span>
+
+### Day33
+
+寄存器编写学习中，另外谢助教的axvisor启动部分在进行中。开始尝试以下axvisor启动时绕过部分组件支持先打印logo，这一部分应该需要到make文件里去修改。
