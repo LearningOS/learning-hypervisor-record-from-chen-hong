@@ -39,6 +39,8 @@
 * [Day   31  (2025-08-19)](#30)
 * [Day   32  (2025-08-21)](#31)
 * [Day   33  (2025-08-23)](#32)
+* [Day   34  (2025-08-25)](#33)
+* [Day   35  (2025-08-26)](#34)
 <span id="0"></span>
 
 ### Day 1
@@ -342,3 +344,15 @@ axvisor for LA主要的任务是实现axvm/src/vcpu中的预留的接口。这�
 ### Day33
 
 寄存器编写学习中，另外谢助教的axvisor启动部分在进行中。开始尝试以下axvisor启动时绕过部分组件支持先打印logo，这一部分应该需要到make文件里去修改。
+
+<span id="33"></span>
+
+### Day34
+
+阅读完了hvisor和[loongarch64](https://docs.rs/crate/loongArch64/latest)对于寄存器的实现，loongarchvcpu仓库的寄存器实现基本可以套用。
+
+<span id="34"></span>
+
+### Day35
+
+基于姚礼兴和谢祖均的工作尝试跑通axvisor，目前遇到memorty_addr的版本问题。另外开会决定了下一步工作是将loongarchvcpu仓库的接口先声明但不是实现，保证axvisor能打印logo。
