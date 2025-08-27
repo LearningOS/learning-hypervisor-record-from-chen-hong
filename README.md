@@ -1,4 +1,4 @@
-# learninghypervisor-record-from-chen-hong
+<img width="2479" height="1415" alt="image" src="https://github.com/user-attachments/assets/c7ee9bc3-7ec4-4531-b2f9-d378a9c04067" /># learninghypervisor-record-from-chen-hong
 
 ## axvisor for LA 开发日志
 
@@ -41,6 +41,7 @@
 * [Day   33  (2025-08-23)](#32)
 * [Day   34  (2025-08-25)](#33)
 * [Day   35  (2025-08-26)](#34)
+* [Day   36  (2025-08-27)](#35) 
 <span id="0"></span>
 
 ### Day 1
@@ -356,3 +357,11 @@ axvisor for LA主要的任务是实现axvm/src/vcpu中的预留的接口。这�
 ### Day35
 
 基于姚礼兴和谢祖均的工作尝试跑通axvisor，目前遇到memorty_addr的版本问题。另外开会决定了下一步工作是将loongarchvcpu仓库的接口先声明但不是实现，保证axvisor能打印logo。
+
+<span id="35"></span>
+
+### Day36
+
+目前axvisor的axsaddr等组件使用的memorty_addr是0.4版本，但是所使用的arceos的module组件使用的是0.3版本导致有冲突，其实问题就是arceos的memory_addr更新未完成更未同步到axvisor依赖的arceos。目前的解决方法有两种
++ fork一份axvisor依赖的arceos仓库并对其进行更新
++ 暂时回退axvisor组件依赖的memory_addr到0.3版本（意义不大）
