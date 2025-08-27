@@ -1,4 +1,3 @@
-<img width="2479" height="1415" alt="image" src="https://github.com/user-attachments/assets/c7ee9bc3-7ec4-4531-b2f9-d378a9c04067" /># learninghypervisor-record-from-chen-hong
 
 ## axvisor for LA 开发日志
 
