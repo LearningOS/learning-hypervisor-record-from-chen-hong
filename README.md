@@ -40,7 +40,8 @@
 * [Day   33  (2025-08-23)](#32)
 * [Day   34  (2025-08-25)](#33)
 * [Day   35  (2025-08-26)](#34)
-* [Day   36  (2025-08-27)](#35) 
+* [Day   36  (2025-08-27)](#35)
+* [Day   36  (2025-08-28)](#36) 
 <span id="0"></span>
 
 ### Day 1
@@ -364,3 +365,9 @@ axvisor for LA主要的任务是实现axvm/src/vcpu中的预留的接口。这�
 目前axvisor的axsaddr等组件使用的memorty_addr是0.4版本，但是所使用的arceos的module组件使用的是0.3版本导致有冲突，其实问题就是arceos的memory_addr更新未完成更未同步到axvisor依赖的arceos。目前的解决方法有两种
 + fork一份axvisor依赖的arceos仓库并对其进行更新
 + 暂时回退axvisor组件依赖的memory_addr到0.3版本（意义不大）
+
+ <span id="36"></span>
+
+### Day37
+
+今日更换了周睿老师提供的axvisor版本，目前基本冲突已经解决只剩在编译axvisor时无法按路径正确加载arceos-loongarch64.toml配置文件的问题。(commit)[https://github.com/numpy1314/axvisor/commit/d2502fbf017a44706fdbe6f25ad971b921641bdd]
