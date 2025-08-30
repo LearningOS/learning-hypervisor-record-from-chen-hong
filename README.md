@@ -41,7 +41,9 @@
 * [Day   34  (2025-08-25)](#33)
 * [Day   35  (2025-08-26)](#34)
 * [Day   36  (2025-08-27)](#35)
-* [Day   36  (2025-08-28)](#36) 
+* [Day   37  (2025-08-28)](#36)
+* [Day   38  (2025-08-29)](#37)
+* [Day   39  (2025-08-30)](#38) 
 <span id="0"></span>
 
 ### Day 1
@@ -370,4 +372,17 @@ axvisor for LA主要的任务是实现axvm/src/vcpu中的预留的接口。这�
 
 ### Day37
 
-今日更换了周睿老师提供的axvisor版本，目前基本冲突已经解决只剩在编译axvisor时无法按路径正确加载arceos-loongarch64.toml配置文件的问题。(commit)[https://github.com/numpy1314/axvisor/commit/d2502fbf017a44706fdbe6f25ad971b921641bdd]
+今日更换了周睿老师提供的axvisor版本，目前基本冲突已经解决只剩在编译axvisor时无法按路径正确加载arceos-loongarch64.toml配置文件的问题。[commit](https://github.com/numpy1314/axvisor/commit/d2502fbf017a44706fdbe6f25ad971b921641bdd)
+
+ <span id="37"></span>
+
+### Day38
+
+今日与xzj、ylx一切解决了若干问题后跑通了axvisor的欢迎界面下一步需上板验证。
+![axvisor_logo](photo_gallery/axvisor_logo.png)
+
+ <span id="38"></span>
+
+### Day39
+
+将hvisor中实现寄存器移入loongarch64h仓库中，并将该仓库引入loongarch_vcpu。
